@@ -96,6 +96,23 @@ function s:getDistro()
     return s:distro
   endif
 
+  if exists('g:WebDevIconsOS')
+    if g:WebDevIconsOS =~# 'Arch'
+      let s:distro = ''
+    elseif g:WebDevIconsOS =~# 'Ubuntu'
+      let s:distro = ''
+    elseif g:WebDevIconsOS =~# 'Cent'
+      let s:distro = ''
+    elseif g:WebDevIconsOS =~# 'Debian'
+      let s:distro = ''
+    elseif g:WebDevIconsOS =~# 'Dock'
+      let s:distro = ''
+    else
+      let s:distro = ''
+    endif
+    return s:distro
+  endif
+
   if executable('lsb_release')
     let s:lsb = system('lsb_release -i')
     if s:lsb =~# 'Arch'
